@@ -1,0 +1,141 @@
+repositories:
+  ccomjhc/asv_global:
+    type: git
+    url: git@penguinc:field/asv_global.git
+    version: noetic
+  ccomjhc/ben_description:
+    type: git
+    url: git@penguinc:field/ben_description.git
+    version: noetic
+  ccomjhc/ben_hardware:
+    type: git
+    url: git@penguinc:field/ben_hardware.git
+    version: noetic
+  ccomjhc/ben_project11:
+    type: git
+    url: git@penguinc:field/ben_project11.git
+    version: noetic
+  ccomjhc/br24_radar:
+    type: git
+    url: git@penguinc:field/br24_radar.git
+    version: noetic
+  ccomjhc/ccomjhc_project11:
+    type: git
+    url: git@penguinc:field/ccomjhc_project11.git
+    version: noetic
+  ccomjhc/command_bridge:
+    type: git
+    url: git@penguinc:field/command_bridge.git
+    version: noetic
+  ccomjhc/control_by_web_x4xx_interface:
+    type: git
+    url: git@penguinc:field/control_by_web_x4xx_interface.git
+    version: noetic
+  ccomjhc/cw4_helm:
+    type: git
+    url: git@penguinc:field/cw4_helm.git
+    version: noetic
+  ccomjhc/darknet_ros_msgs:
+    type: git
+    url: git@penguinc:field/darknet_ros_msgs.git
+    version: noetic
+  ccomjhc/ds_kongsberg_msgs:
+    type: git
+    url: git@penguinc:field/ds_kongsberg_msgs.git
+    version: noetic
+  ccomjhc/ds_msgs:
+    type: git
+    url: git@penguinc:field/ds_msgs.git
+    version: noetic
+  ccomjhc/dubins_curves:
+    type: git
+    url: git@penguinc:field/dubins_curves.git
+    version: noetic
+  ccomjhc/flir:
+    type: git
+    url: git@penguinc:field/flir.git
+    version: noetic
+  ccomjhc/geographic_visualization_msgs:
+    type: git
+    url: git@penguinc:field/geographic_visualization_msgs.git
+    version: noetic
+  ccomjhc/halo_radar:
+    type: git
+    url: git@penguinc:field/halo_radar.git
+    version: noetic
+  ccomjhc/helm_manager:
+    type: git
+    url: git@penguinc:field/helm_manager.git
+    version: noetic
+  ccomjhc/hover:
+    type: git
+    url: git@penguinc:field/hover.git
+    version: noetic
+  ccomjhc/kongsberg_em_driver:
+    type: git
+    url: git@penguinc:field/kongsberg_em_driver.git
+    version: noetic
+  ccomjhc/librosasio:
+    type: git
+    url: git@penguinc:field/librosasio.git
+    version: noetic
+  ccomjhc/manda_coverage:
+    type: git
+    url: git@penguinc:field/manda_coverage.git
+    version: noetic
+  ccomjhc/marine_msgs:
+    type: git
+    url: git@penguinc:field/marine_msgs.git
+    version: noetic
+  ccomjhc/mbr:
+    type: git
+    url: git@penguinc:field/mbr.git
+    version: noetic
+  ccomjhc/mission_manager:
+    type: git
+    url: git@penguinc:field/mission_manager.git
+    version: noetic
+  ccomjhc/mpc:
+    type: git
+    url: git@penguinc:field/mpc.git
+    version: noetic
+  ccomjhc/mru_transform:
+    type: git
+    url: git@penguinc:field/mru_transform.git
+    version: noetic
+  ccomjhc/path_follower:
+    type: git
+    url: git@penguinc:field/path_follower.git
+    version: noetic
+  ccomjhc/path_planner:
+    type: git
+    url: git@penguinc:field/path_planner.git
+    version: noetic
+  ccomjhc/pointcloud2_spherical_filter:
+    type: git
+    url: git@penguinc:field/pointcloud2_spherical_filter.git
+    version: noetic
+  ccomjhc/posmv:
+    type: git
+    url: git@penguinc:field/posmv.git
+    version: noetic
+  ccomjhc/project11:
+    type: git
+    url: git@penguinc:field/project11.git
+    version: noetic
+  ccomjhc/project11_platform:
+    type: git
+    url: git@penguinc:field/project11_platform.git
+    version: noetic
+  ccomjhc/project11_robot:
+    type: git
+    url: git@penguinc:field/project11_robot.git
+    version: noetic
+  ccomjhc/survey_manager:
+    type: git
+    url: git@penguinc:field/survey_manager.git
+    version: noetic
+  ccomjhc/udp_bridge:
+    type: git
+    url: git@penguinc:field/udp_bridge.git
+    version: noetic
