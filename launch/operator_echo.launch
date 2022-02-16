@@ -5,7 +5,9 @@
   <arg name="robotNamespace" default="echo"/>
   <arg name="backgroundChart" default="$(find echoboat_ud_project11)/camp_bg/12216/12216_1.KAP"/>
   
-  <!--<arg name="logDirectory"/>--> <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo_operator.yaml" ns="$(arg namespace)"/>
+  <!--<arg name="logDirectory"/>--> 
+  
+  <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo_operator.yaml" ns="$(arg namespace)"/>
 
   <include file="$(find ben_description)/launch/load.launch">
     <arg name="namespace" value="$(arg robotNamespace)"/>
@@ -28,7 +30,7 @@
   
   <!--<rosparam command="load" file="$(find echoboat_ud_project11)/config/operator_echo.yaml" ns="$(arg namespace)"/>-->
   
-  <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
+  
   
   <include file="$(find project11)/launch/operator_ui.launch">
     <arg name="namespace" value="$(arg namespace)"/>
@@ -38,6 +40,7 @@
   <!--<node pkg="mbr" type="mbr_logging.py" name="mbr_node" ns="$(arg namespace)"/>
   <node pkg="ubiquiti" type="ubiquiti_node.py" name="ubiquity" ns="$(arg namespace)"/>-->
 
+  <!--<rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>-->
   <rosparam command="load" file="$(find echoboat_ud_project11)/config/operator.yaml" ns="$(arg namespace)"/>
 
   <!--<include file="$(find project11)/launch/operator_loggers_mystique.launch">

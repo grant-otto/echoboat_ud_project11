@@ -1,9 +1,12 @@
 udp_bridge/remotes:
     robot:
-        name: ben
-        host: mystiquec
+        name: echo
+        host: echoboat-desktop.local
         port: 4200
         topics:
           sensors_radar_HaloA_change_state: {source: /ben/sensors/radar/HaloA/change_state}
           sensors_radar_HaloB_change_state: {source: /ben/sensors/radar/HaloB/change_state}
+          position_topic: /echo/project11/nav/position
+      	  orientation_topic: /echo/project11/nav/orientation
+      	  velocity_topic: /echo/project11/nav/velocity
 mbr_node/radioSerialNumbers: [2510, 9442]
