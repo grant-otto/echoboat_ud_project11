@@ -1,7 +1,7 @@
 <launch>
     <arg name="namespace" default="echo"/>
     <arg name="operator_ip" default="10.42.0.1"/>
-    <arg name="logDirectory"/>
+    <!--<arg name="logDirectory"/>-->
     <arg name="enableBridge" default="true"/>
 
     <rosparam if="$(arg enableBridge)" param="udp_bridge/remotes/operator/topics/clock" ns="$(arg namespace)">{source: /clock}</rosparam>
@@ -10,6 +10,10 @@
         <arg name="namespace" value="$(arg namespace)"/>
         <arg name="yaml_path" value="$(find echoboat_ud_project11)/config/echoboat_ud.yaml"/>
     </include>
+    
+    <!--<include file="$(find project11)/launch/robot_core.launch">
+        <arg name="namespace" value="$(arg namespace)"/>
+    </include-->
 
     <node pkg="echo_helm" type="echo_helm_node" name="echo_helm" ns="$(arg namespace)">
     	    <remap from="cmd_vel" to="control/helm"/>
@@ -22,11 +26,11 @@
     	<remap from="in/velocity" to="/imu/velocity"/>
     	
     	<!--uncomment below when not using the SBG-->
-    	<!--
-    	<remap from="in/position" to="mavros/global_position/global"/>
+    	
+    	<!--remap from="in/position" to="mavros/global_position/global"/>
        <remap from="in/orientation" to="mavros/imu/data"/>
-       <remap from="in/velocity" to="mavros/global_position/raw/gps_vel"/>
-       -->
+       <remap from="in/velocity" to="mavros/global_position/raw/gps_vel"/-->
+      
        
     	
     </node>

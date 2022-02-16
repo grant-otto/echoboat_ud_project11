@@ -1,4 +1,7 @@
-udp_bridge/maxPacketSize: 1400
+
+mission_manager/default_speed: 2.5   # m/s
+mission_manager/turn_radius: 10.0
+
 
 udp_bridge/remotes:
     operator:
