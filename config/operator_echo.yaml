@@ -1,7 +1,7 @@
 udp_bridge/remotes/robot/name: echo
 
 project11/platforms/echo:
-
+  robot_description: ben/robot_description
   width: 1
   length: 1.5
   reference_x: 0.525

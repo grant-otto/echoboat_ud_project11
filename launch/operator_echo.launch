@@ -1,11 +1,10 @@
 <launch>
   <arg name="namespace" default="echo"/>
   <arg name="operator_namespace" default="operator"/>
-  <!--<arg name="robotNamespace" default="echo"/>-->
+  <arg name="robotNamespace" default="echo"/>
   <arg name="backgroundChart" default="$(find echoboat_ud_project11)/camp_bg/12216/12216_1.KAP"/>
   <!--<arg name="logDirectory"/>-->
 
-  
   <include file="$(find project11)/launch/operator_core.launch">
     <arg name="namespace" value="$(arg operator_namespace)"/>
     <arg name="robotNamespace" value="$(arg namespace)"/>
@@ -18,15 +17,10 @@
     <arg name="backgroundChart" value="$(arg backgroundChart)"/>
   </include>
   
-  <rosparam command="load" file="$(find echoboat_ud_project11)/config/operator_echo.yaml" ns="$(arg namespace)"/>
+  <!--<rosparam command="load" file="$(find echoboat_ud_project11)/config/operator_echo.yaml" ns="$(arg namespace)"/>-->
   
-<!--
-  <include file="$(find project11)/launch/operator_ui.launch">
-    <arg name="namespace" value="$(arg namespace)"/>
-    <arg name="robotNamespace" value="$(arg robotNamespace)"/>
-    <arg name="backgroundChart" value="$(arg backgroundChart)"/>
-  </include>
-  -->
+  <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
+  
   <!--<include file="$(find project11)/launch/operator_loggers_mystique.launch">
     <arg name="namespace" value="$(arg namespace)"/>
     <arg name="robotNamespace" value="$(arg robotNamespace)"/>
