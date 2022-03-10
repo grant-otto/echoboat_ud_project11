@@ -19,7 +19,7 @@ repositories:
     type: git
     url: https://github.com/CCOMJHC/ais.git
     version: noetic
-marine_traffic_com:
+  marine_traffic_com:
     type: git
     url: https://github.com/CCOMJHC/marine_traffic_com.git
     version: noetic
