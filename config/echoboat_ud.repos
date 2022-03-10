@@ -13,7 +13,7 @@ repositories:
     version: noetic
   sbg_driver:
     type: git
-    url: https://github.com/CCOMJHC/asv_helm.git
+    url: https://github.com/SBG-Systems/sbg_ros_driver.git
     version: noetic
   ais:
     type: git
