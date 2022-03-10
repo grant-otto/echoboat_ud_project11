@@ -18,7 +18,8 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     git clone https://github.com/CCOMJHC/project11.git
     git clone https://github.com/grant-otto/echoboat_ud_project11.git
 
-    sudo apt-get install python3-rosdep python3-vcstool
+    sudo apt-get update
+    sudo apt-get install python3-rosdep python3-vcstool python3-catkin-tools
     sudo rosdep init
     rosdep update
 
@@ -28,7 +29,7 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     rosdep install --from-paths . --ignore-src -r -y
 
     cd ..
-    catkin_make
+    catkin build
 
 TODO: add crontab
 
@@ -46,7 +47,8 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     git clone https://github.com/CCOMJHC/project11.git
     git clone https://github.com/grant-otto/echoboat_ud_project11.git
 
-    sudo apt-get install python3-rosdep python3-vcstool
+    sudo apt-get update
+    sudo apt-get install python3-rosdep python3-vcstool python3-catkin-tools
     sudo rosdep init
     rosdep update
 
@@ -55,7 +57,7 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     rosdep install --from-paths . --ignore-src -r -y
 
     cd ..
-    catkin_make
+    catkin build
 
 TODO: add crontab
 
