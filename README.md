@@ -31,6 +31,8 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     cd ..
     catkin build
 
+    sudo apt install tmux cron
+    
 TODO: add crontab
 
     source devel/setup.bash
