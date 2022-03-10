@@ -14,7 +14,6 @@ repositories:
   sbg_driver:
     type: git
     url: https://github.com/SBG-Systems/sbg_ros_driver.git
-    version: noetic
   ais:
     type: git
     url: https://github.com/CCOMJHC/ais.git
