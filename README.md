@@ -66,5 +66,6 @@ From here on out, the last command will launch the UI.
 
 ## More Information
 
-For more info on Project11 including simulation etc., see the CCOM/JHC project11 repo located [here] (https://github.com/CCOMJHC/project11).
+For more info on Project11 including simulation etc., see the CCOM/JHC project11 repo located [here](https://github.com/CCOMJHC/project11).
+
 Acknowledgements go to Roland Arsenault and Val Schmidt (CCOM) and Marcos Berrera (Seafloor Systems) for helping with the integration.
