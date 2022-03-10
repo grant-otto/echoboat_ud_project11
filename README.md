@@ -22,7 +22,7 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     sudo rosdep init
     rosdep update
 
-    vcs import < echoboat_ud_project11/config/mystique.repos
+    vcs import < project11/config/repos/sim_demo.repos
     vcs import < echoboat_ud_project11/config/echoboat_ud.repos
     
     rosdep install --from-paths . --ignore-src -r -y
