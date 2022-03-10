@@ -1,5 +1,33 @@
 repositories:
-  asv_helm:
+  echo_helm:
+    type: git
+    url: https://github.com/CCOMJHC/echo_helm.git
+    version: noetic
+  echoboat_project11:
+    type: git
+    url: https://github.com/CCOMJHC/echoboat_project11.git
+    version: noetic
+  posmv:
+    type: git
+    url: https://github.com/CCOMJHC/posmv.git
+    version: noetic
+  sbg_driver:
     type: git
     url: https://github.com/CCOMJHC/asv_helm.git
+    version: noetic
+  ais:
+    type: git
+    url: https://github.com/CCOMJHC/ais.git
+    version: noetic
+marine_traffic_com:
+    type: git
+    url: https://github.com/CCOMJHC/marine_traffic_com.git
+    version: noetic
+  hydrographic_msgs:
+    type: git
+    url: https://github.com/apl-ocean-engineering/hydrographic_msgs.git
+    version: noetic
+  acoustic_msgs_tools:
+    type: git
+    url: https://github.com/CaptKrasno/acoustic_msgs_tools.git
     version: noetic
