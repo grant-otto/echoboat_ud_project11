@@ -1,6 +1,6 @@
 [![docker-noetic-ros-base](../../actions/workflows/ros-base-docker.yml/badge.svg)](../../actions/workflows/ros-base-docker.yml)
 
-# Project11: A mapping focused open-sourced software framework for Autonomous Surface Vehicles
+# Project11: UD Echoboat Integration
 
 The Project 11 framework was developed as a backseat driver for Autonomous Surface Vehicles
 (ASVs). Key design features include the ability to quickly and easily specify survey plans; monitoring of mission progress, even
