@@ -26,8 +26,6 @@ repositories:
   hydrographic_msgs:
     type: git
     url: https://github.com/apl-ocean-engineering/hydrographic_msgs.git
-    version: noetic
   acoustic_msgs_tools:
     type: git
     url: https://github.com/CaptKrasno/acoustic_msgs_tools.git
-    version: noetic
