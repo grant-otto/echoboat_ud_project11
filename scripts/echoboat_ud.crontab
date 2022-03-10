@@ -20,4 +20,4 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-@reboot /home/field/project11/catkin_ws/src/ben_hardware/scripts/autostart_mystique.bash
+@reboot /home/jetson/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash
