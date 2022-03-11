@@ -32,8 +32,10 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
     catkin build
 
     sudo apt install tmux cron
-    
-TODO: add crontab
+    crontab -l > mycron
+    echo "@reboot /home/jetson/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash" >> mycron
+    crontab mycron
+    rm mycron
 
     source devel/setup.bash
     roslaunch echoboat_ud_project11 echo_robot.launch
