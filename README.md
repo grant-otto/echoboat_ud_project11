@@ -39,7 +39,7 @@ Import stock sim_demo github repos and additional echoboat-related repos
     cd ..
     catkin build
 
-Set up start-on-boot using crontab and tmux. The device will now 
+Set up start-on-boot using crontab and tmux. The device will now run the launch file on boot in a tmux terminal.
 
     sudo apt install tmux cron
     crontab -l > mycron
@@ -51,7 +51,13 @@ Set up start-on-boot using crontab and tmux. The device will now
     source devel/setup.bash
     roslaunch echoboat_ud_project11 echo_robot.launch
     
-Now, Project11 (headless robot) will launch on boot.
+Now, Project11 (headless robot) will launch on boot. To access the tmux terminal, open a normal terminal and run:
+
+    tmux attach-session -t project11
+
+If this doesn't work, verify that the session is running using:
+
+    tmux ls
 
 ### Operator Machine Installation Guide
 
