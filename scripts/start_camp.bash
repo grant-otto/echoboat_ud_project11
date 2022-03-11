@@ -1,4 +1,4 @@
-#!/usr#!/bin/bash
+#!/bin/bash
 
 cd ~/project11/catkin_ws
 source devel/setup.bash
