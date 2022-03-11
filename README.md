@@ -13,6 +13,7 @@ Ubuntu only. Currently, the vehicle is installed to a Jetson Nano (regular, NOT 
 
 Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From there, you can quickly install and run Project11 with the following:
 
+Create project11 workspace and clone 
     mkdir -p project11/catkin_ws/src
     cd project11/catkin_ws/src
     git clone https://github.com/CCOMJHC/project11.git
