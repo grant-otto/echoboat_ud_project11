@@ -28,6 +28,8 @@ Update and install necessary packages with apt-get and rosdep
     sudo apt-get install python3-rosdep python3-vcstool python3-catkin-tools
     sudo rosdep init
     rosdep update
+    wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+    sudo bash ./install_geographiclib_datasets.sh
 
 Import stock sim_demo github repos and additional echoboat-related repos
 
