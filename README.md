@@ -79,13 +79,20 @@ Install ROS Noetic using the standard ROS install workflow on the ROS Wiki. From
 
     cd ..
     catkin build
+    
+Create CAMP_STARTUP directory on the Desktop and add the camp executable
+    
+    mkdir ~/Desktop/CAMP_STARTUP
+    cp ~/project11/catkin_ws/src/echoboat_ud_project11/scripts/start_camp.bash ~/Desktop/CAMP_STARTUP
+    cd ~/Desktop/CAMP_STARTUP
+    chmod +x start_camp.bash
 
-TODO: add crontab
+To launch the UI, run the start_camp.bash file under ~/Desktop/CAMP_STARTUP. You can open a terminal and run:
 
-    source devel/setup.bash
-    roslaunch echoboat_ud_project11 operator_echo.launch
+    cd ~/Desktop/CAMP_STARTUP
+    ./start_camp.bash
 
-From here on out, the last command will launch the UI.
+Or, configure your gnome settings so that you can double click the file and run in terminal. 
 
 ## More Information
 
