@@ -49,9 +49,10 @@ Set up start-on-boot using crontab and tmux. The device will now run the launch 
     echo "@reboot /home/jetson/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash" >> mycron
     crontab mycron
     rm mycron
+    
+You will likely need to run the below command to enable permissions for the Pixhawk via USB. This will need a reboot to take effect. You can do it later or now if you want to test the launch file.
 
-    source devel/setup.bash
-    roslaunch echoboat_ud_project11 echo_robot.launch
+    sudo usermod -a -G dialout $USER
     
 Now, Project11 (headless robot) will launch on boot. To access the tmux terminal, open a normal terminal and run:
 
