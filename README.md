@@ -34,6 +34,7 @@ Create project11 workspace and clone
 
     sudo apt install tmux cron
     crontab -l > mycron
+    chmod +x ~/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash
     echo "@reboot /home/jetson/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash" >> mycron
     crontab mycron
     rm mycron
