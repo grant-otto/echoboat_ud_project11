@@ -3,6 +3,9 @@
     <arg name="operator_ip" default="10.42.0.1"/>
     <!--<arg name="logDirectory"/>-->
     <arg name="enableBridge" default="true"/>
+    
+    <param name="/use_sim_time" type="bool" value="false"/>
+
 
     <rosparam if="$(arg enableBridge)" param="udp_bridge/remotes/operator/topics/clock" ns="$(arg namespace)">{source: /clock}</rosparam>
     
@@ -13,7 +16,8 @@
     
     <!--<include file="$(find project11)/launch/robot_core.launch">
         <arg name="namespace" value="$(arg namespace)"/>
-    </include-->
+        <arg name="enableBridge" value="$(arg enableBridge)"/>
+    </include>-->
 
     <node pkg="echo_helm" type="echo_helm_node" name="echo_helm" ns="$(arg namespace)">
     	    <remap from="cmd_vel" to="control/helm"/>
@@ -21,18 +25,16 @@
 
     <node pkg="mru_transform" type="sensor_sync_node" name="sensor_sync" ns="$(arg namespace)">
     	<param name="outTopicPrefix" value="sensors/mru/"/>
-    	<remap from="in/position" to="/imu/nav_sat_fix"/>
+    	<!--<remap from="in/position" to="/imu/nav_sat_fix"/>
     	<remap from="in/orientation" to="/imu/data"/>
-    	<remap from="in/velocity" to="/imu/velocity"/>
+    	<remap from="in/velocity" to="/imu/velocity"/>-->
     	
     	<!--uncomment below when not using the SBG-->
     	
-    	<!--remap from="in/position" to="mavros/global_position/global"/>
+       <remap from="in/position" to="mavros/global_position/global"/>
        <remap from="in/orientation" to="mavros/imu/data"/>
-       <remap from="in/velocity" to="mavros/global_position/raw/gps_vel"/-->
-      
-       
-    	
+       <remap from="in/velocity" to="mavros/global_position/raw/gps_vel"/>
+ 
     </node>
 
     <include file="$(find mavros)/launch/apm.launch" ns="$(arg namespace)">
@@ -41,15 +43,17 @@
     	<param name="local_position/tf/send" value="false"/>
     </include>
     
-    <rosparam command="load" file="$(find echoboat_project11)/config/echo.yaml" ns="$(arg namespace)"/>
+    <!--<rosparam command="load" file="$(find echoboat_project11)/config/echo.yaml" ns="$(arg namespace)"/>-->
+    
+    <rosparam command="load" file="$(find ben_project11)/config/ben.yaml" ns="$(arg namespace)"/>
 
     <param name="/$(arg namespace)/udp_bridge/remotes/operator/host" value="$(arg operator_ip)"/>
     
 <!--uncomment below when not using the SBG -->
 
-  <node name="sbg_ellipseD" pkg="sbg_driver" type="sbg_device" output="screen">
+<!--  <node name="sbg_ellipseD" pkg="sbg_driver" type="sbg_device" output="screen">
     <rosparam command="load" file="$(find echoboat_ud_project11)/config/ellipse_D_echo_final.yaml" />
-  </node>
+  </node>-->
  
 <!--<include file="$(find ben_hardware)/launch/loggers.launch">
         <arg name="namespace" value="$(arg namespace)"/>
