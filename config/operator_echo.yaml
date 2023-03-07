@@ -1,5 +1,4 @@
 udp_bridge/remotes/robot/name: echo
-
 project11/platforms/echo:
   robot_description: echo/robot_description
   width: 1
@@ -10,4 +9,3 @@ project11/platforms/echo:
       position_topic: /echo/project11/nav/position
       orientation_topic: /echo/project11/nav/orientation
       velocity_topic: /echo/project11/nav/velocity
-
