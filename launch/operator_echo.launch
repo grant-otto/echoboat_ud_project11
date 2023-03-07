@@ -6,7 +6,7 @@
   <arg name="backgroundChart" default="$(find echoboat_ud_project11)/camp_bg/12216/12216_1.KAP"/>
   <!--<arg name="logDirectory"/>--> 
   
-  <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo_operator.yaml" ns="$(arg namespace)"/>
+  <rosparam command="load" file="$(find echoboat_ud_project11)/config/operator_echo.yaml" ns="$(arg namespace)"/>
 
   <include file="$(find ben_description)/launch/load.launch">
     <arg name="namespace" value="$(arg robotNamespace)"/>

@@ -20,9 +20,9 @@ odometry:
     # Publish odometry transforms.
     publishTf: true
     # Odometry frame IDs.
-    odomFrameId: "odom"
-    baseFrameId: "base_link"
-    initFrameId: "map"
+    odomFrameId: "echo/odom"
+    baseFrameId: "echo/base_link"
+    initFrameId: "echo/map"
 
 # Configuration of the device with ROS.
 confWithRos: true
@@ -51,7 +51,7 @@ sensorParameters:
   # Initial altitude (above WGS84 ellipsoid) (m)
   initAlt: 100.0
   # Year at startup
-  year: 2022
+  year: 2023
   # month in year at startup
   month: 01
   # day in month at startup
@@ -74,7 +74,7 @@ imuAlignementLeverArm:
   # 3 ALIGNMENT_RIGHT     IMU Axis is turned in vehicle's right direction
   # 4 ALIGNMENT_UP        IMU Axis is turned in vehicle's up direction
   # 5 ALIGNMENT_DOWN      IMU Axis is turned in vehicle's down direction
-  axisDirectionX: 1
+  axisDirectionX: 0
   # IMU Y axis direction in vehicle frame
   # 0 ALIGNMENT_FORWARD   IMU Axis is turned in vehicle's forward direction
   # 1 ALIGNMENT_BACKWARD  IMU Axis is turned in vehicle's backward direction
@@ -82,7 +82,7 @@ imuAlignementLeverArm:
   # 3 ALIGNMENT_RIGHT     IMU Axis is turned in vehicle's right direction
   # 4 ALIGNMENT_UP        IMU Axis is turned in vehicle's up direction
   # 5 ALIGNMENT_DOWN      IMU Axis is turned in vehicle's down direction
-  axisDirectionY: 2
+  axisDirectionY: 3
   # Residual roll error after axis alignment rad
   misRoll: 0
   # Residual pitch error after axis alignment rad
@@ -145,7 +145,7 @@ magnetometer:
     #     This calibration mode is only designed to be used when roll and pitch motions are less than ± 5°.
     #     To work correctly, the device should be rotated through at least a full circle.
     # 2 3D Tell the device to start a full 3D magnetic calibration procedure. The 3D magnetic calibration offers the best accuracy
-    mode: 2
+    mode: 1
 
     # 0 LOW_BW Use this parameter in case of strong magnetic noise during calibration.
     #     Motion during calibration is then limited to slow rotations.
@@ -168,20 +168,20 @@ gnss:
   gnss_model_id: 107
 
   #GNSS primary antenna lever arm in IMU X axis (m)
-  primaryLeverArmX: 1.01
+  primaryLeverArmX: 0.991
   #GNSS primary antenna lever arm in IMU Y axis (m)
   primaryLeverArmY: 0
   #GNSS primary antenna lever arm in IMU Z axis (m)
-  primaryLeverArmZ: -0.36
+  primaryLeverArmZ: -0.41
   #GNSS primary antenna precise. Set to true if the primary lever arm has been accurately entered and doesn't need online re-estimation.
   primaryLeverPrecise: false
 
   #GNSS secondary antenna lever arm in IMU X axis (m)
-  secondaryLeverArmX: -0.5
+  secondaryLeverArmX: -0.51
   #GNSS secondary antenna lever arm in IMU Y axis (m)
   secondaryLeverArmY: 0
   #GNSS secondary antenna lever arm in IMU Z axis (m)
-  secondaryLeverArmZ: -0.36
+  secondaryLeverArmZ: -0.41
 
   # Secondary antenna operating mode.
   # 1 The GNSS will be used in single antenna mode only and the secondary lever arm is not used.
@@ -224,7 +224,7 @@ odom:
   # 2 Measurement is always accepted
   rejectMode: 0
 
-# ToDo: event & CAN configuration
+# ToDo: event & CAN configuration 
 
 ############################### Output configuration ###############################
 # 0 Output is disabled
@@ -263,12 +263,12 @@ output:
   #
   # true : ENU convention (X east, Y north, Z up)
   # false (default): NED convention (X north, Y east, Z down)
-  use_enu: false
+  use_enu: true
 
   # Frame ID:
   # Note: If the frame convention is NED so the default frame ID is (imu_link_ned)
   #       else if the convention is ENU so the default frame ID is (imu_link)
-  frame_id: "base_link"
+  frame_id: "echo/base_link"
 
   # Status general, clock, com aiding, solution, heave
   log_status: 8

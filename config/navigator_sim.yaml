@@ -1,0 +1,5 @@
+costmap:
+  global_frame: ben/map
+  robot_base_frame: ben/base_link
+  
+

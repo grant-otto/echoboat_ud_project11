@@ -1,0 +1,18 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+  <arg name="operator_namespace" default="operator"/>
+  <arg name="sim_traffic" default="false"/>
+  <arg name="backgroundChart" default="$(find camp)/workspace/12216/12216_1.KAP"/>
+
+  <include file="$(find project11_simulation)/launch/sim_local.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="sim_traffic" value="$(arg sim_traffic)"/>
+    <arg name="backgroundChart" value="$(arg backgroundChart)"/>
+    <arg name="operator_namespace" value="$(arg operator_namespace)"/>
+  </include>
+  
+  <rosparam file="$(find echoboat_ud_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>
+  <rosparam file="$(find echoboat_ud_project11)/config/navigator_sim.yaml" command="load" ns="$(arg namespace)/navigator"/>
+  <param name="/asv_sim/models/cw4/clutch_engagement_rpm" value="0"/>
+
+</launch>

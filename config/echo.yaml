@@ -1,0 +1,29 @@
+mission_manager/default_speed: 2.0   # m/s
+mission_manager/turn_radius: 10.0
+mission_manager/hover_minimum_distance: 5.0
+mission_manager/hover_maximum_distance: 50.0
+mission_manager/hover_maximum_speed: 1.0 # m/s
+
+mru_transform/sensors:
+ - name: sbg
+   topics: { position: 'sensors/sbg/imu/nav_sat_fix', orientation: 'sensors/sbg/orientation', velocity: 'sensors/sbg/imu/velocity'}
+ - name: posmv
+   topics: { position: 'sensors/posmv/position', orientation: 'sensors/posmv/orientation', velocity: 'sensors/posmv/velocity'}
+ - name: mavlink
+   topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
+      
+helm_manager/output_type: 'helm'
+helm_manager/helm/max_speed: 2.75
+helm_manager/helm/max_yaw_speed: 0.5
+
+udp_bridge/remotes:
+    operator:
+        topics:
+          sensors_sbg_imu: {source: sensors/sbg/imu/data}
+          sensors_sbg_velocity: {source: sensors/sbg/imu/velocity}
+          sensors_sbg_nav_sat_fix: {source: sensors/sbg/imu/nav_sat_fix}
+          #sensors_cameras_pano_2_yolo4_bounding_boxes: {source: sensors/cameras/pano_2/yolo4/bounding_boxes}
+          #sensors_cameras_pano_3_yolo4_bounding_boxes: {source: sensors/cameras/pano_3/yolo4/bounding_boxes}
+          #sensors_cameras_pano_4_yolo4_bounding_boxes: {source: sensors/cameras/pano_4/yolo4/bounding_boxes}
+          #sensors_cameras_pano_5_yolo4_bounding_boxes: {source: sensors/cameras/pano_5/yolo4/bounding_boxes}
+          #sensors_cameras_pano_6_yolo4_bounding_boxes: {source: sensors/cameras/pano_6/yolo4/bounding_boxes}

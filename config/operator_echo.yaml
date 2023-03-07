@@ -9,5 +9,4 @@ project11/platforms/echo:
     combined:
       position_topic: /echo/project11/nav/position
       orientation_topic: /echo/project11/nav/orientation
-      velocity_topic: /echo/project11/nav/velocity
-
+      velocity_topic: /echo/projec111/nav/velocity
