@@ -5,7 +5,7 @@
 
 DAY=$(date "+%Y-%m-%d")
 NOW=$(date "+%Y-%m-%dT%H.%M.%S.%N")
-LOGDIR="/home/jetson/project11/log/${DAY}"
+LOGDIR="/home/echoboat/project11_new/log/${DAY}"
 mkdir -p "$LOGDIR"
 LOG_FILE="${LOGDIR}/autostart_${NOW}.txt"
 
@@ -20,18 +20,19 @@ echo ""
 echo "Logs:"
 
 source /opt/ros/noetic/setup.bash
-source /home/jetson/project11/catkin_ws/devel/setup.bash
+source /home/echoboat/project11_new/devel/setup.bash
 
 set -v
 
-export ROS_WORKSPACE=/home/jetson/project11/catkin_ws
-#export ROS_IP=192.168.100.112
+export ROS_WORKSPACE=/home/echoboat/project11_new/
+export ROS_IP=192.168.250.10
 
 echo "Wait 10 seconds before launching ROS..."
 sleep 10
 
 /usr/bin/tmux new -d -s project11 roscore
 /usr/bin/tmux splitw -p 90
-/usr/bin/tmux send-keys "roslaunch echoboat_ud_project11 echo_robot.launch" C-m
+/usr/bin/tmux send-keys "cd ~/project11_new" C-m
+/usr/bin/tmux send-keys "rosrun rosmon rosmon --name=rosmon_echoboat_desktop echoboat_ud_project11 echo_robot.launch" C-m
 
 } >> "${LOG_FILE}" 2>&1
