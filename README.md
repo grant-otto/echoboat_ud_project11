@@ -44,6 +44,7 @@ Import stock sim_demo github repos and additional echoboat-related repos
 Set up start-on-boot using crontab and tmux. The device will now run the launch file on boot in a tmux terminal.
 
     sudo apt install tmux cron
+    crontab -e
     crontab -l > mycron
     chmod +x ~/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash
     echo "@reboot /home/jetson/project11/catkin_ws/src/echoboat_ud_project11/scripts/autostart_echoboatud.bash" >> mycron
