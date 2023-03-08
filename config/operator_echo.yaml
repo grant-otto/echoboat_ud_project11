@@ -1,12 +1,16 @@
-udp_bridge/remotes/robot/name: echo
 project11/platforms/echo:
   robot_description: echo/robot_description
-  width: 1
+  width: 1.0
   length: 1.5
   reference_x: 0.525
   nav_sources:
     combined:
-      position_topic: /echo/project11/nav/position
-      orientation_topic: /echo/project11/nav/orientation
-      velocity_topic: /echo/project11/nav/velocity
+      position_topic: /echo/sensors/sbg/imu/nav_sat_fix
+      orientation_topic: /echo/sensors/sbg/imu/data
+      velocity_topic: /echo/sensors/sbg/imu/velocity
 
+udp_bridge/remotes:
+    robot:
+        name: echo
+        host: 192.168.250.10
+        port: 4200

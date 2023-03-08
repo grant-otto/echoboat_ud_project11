@@ -12,10 +12,6 @@ mru_transform/sensors:
  - name: mavlink
    topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
       
-helm_manager/output_type: 'helm'
-helm_manager/helm/max_speed: 2.75
-helm_manager/helm/max_yaw_speed: 0.5
-
 udp_bridge/remotes:
     operator:
         topics:
