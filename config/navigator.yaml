@@ -9,7 +9,11 @@ robot:
 costmap:
   global_frame: echo/map
   robot_base_frame: echo/base_link
-  
+
+plugins:
+  TaskToTwistWorkflow:
+    ud_path_follower: ud_path_follower/PathFollower
+
 TaskToTwistWorkflow/transit:
   steps:
     - dubins
@@ -18,6 +22,3 @@ TaskToTwistWorkflow/transit:
 TaskToTwistWorkflow/survey_line:
   last_step: ud_path_follower
   
-plugins:
-  TaskToTwistWorkflow:
-    path_follower: ud_path_follower/PathFollower
