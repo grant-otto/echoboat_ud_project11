@@ -43,6 +43,8 @@
     	<param name="global_position/tf/send" value="false"/>
     	<param name="local_position/tf/send" value="false"/>
     </include>
+    
+    <rosparam command="load" file="$(find echoboat_project11)/config/echo.yaml" ns="$(arg namespace)"/>
        
     <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo.yaml" ns="$(arg namespace)"/>
 
