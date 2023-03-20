@@ -11,9 +11,15 @@
     <arg name="operator_namespace" value="$(arg operator_namespace)"/>
   </include>
   
-  <rosparam file="$(find echoboat_ud_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>
+  <!--rosparam file="$(find echoboat_ud_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/-->
   <rosparam file="$(find echoboat_ud_project11)/config/navigator_sim.yaml" command="load" ns="$(arg namespace)/navigator"/>
   <rosparam file="$(find echoboat_ud_project11)/config/sim.yaml" command="load" ns="asv_sim"/>
   <param name="/asv_sim/models/cw4/clutch_engagement_rpm" value="0"/>
-
+  
+  <!--
+  <node pkg="path_follower" type="path_follower_node" name="path_follower" ns="$(arg namespace)">
+    <param name="ricatti_param" value="0.0875"/> 
+    <param name="prop_gain_x" value="100.78"/> 
+    <param name="prop_gain_w" value="20.055"/> 
+  </node-->
 </launch>

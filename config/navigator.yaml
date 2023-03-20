@@ -13,7 +13,7 @@ costmap:
 
 plugins:
   TaskToTwistWorkflow:
-    ud_path_follower: ud_path_follower/PathFollower
+   ud_path_follower: ud_path_follower/PathFollower
 
 TaskToTwistWorkflow/transit:
   steps:

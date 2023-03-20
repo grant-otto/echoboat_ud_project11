@@ -18,11 +18,11 @@ odometry:
     # Enable ROS odometry messages.
     enable: true
     # Publish odometry transforms.
-    publishTf: true
+    publishTf: false
     # Odometry frame IDs.
-    odomFrameId: "echo/odom"
-    baseFrameId: "echo/base_link"
-    initFrameId: "echo/map"
+    odomFrameId: "echo/sbg_odom"
+    baseFrameId: "echo/sbg_base_link"
+    initFrameId: "echo/sbg_map"
 
 # Configuration of the device with ROS.
 confWithRos: true

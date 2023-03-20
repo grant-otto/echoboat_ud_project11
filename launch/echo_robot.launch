@@ -1,9 +1,10 @@
 <launch> <!--based off of mystique.launch in ben_hardware-->
     <arg name="namespace" default="echo"/>
-    <!--<arg name="operator_ip" default="10.42.0.1"/>-->
-    <arg name="operator_ip" default="localhost"/>
+    <arg name="operator_ip" default="192.168.53.152"/> <!-- UD LAN IP for ethernet bridge-->
+    <!--<arg name="operator_ip" default="192.168.250.11"/>--> <!-- CCOM trailer network IP-->
     <!--<arg name="logDirectory"/>-->
     <arg name="enableBridge" default="true"/>
+    <arg name="useUDpathfollower" default="true"/>
     
     <!-- param name="/use_sim_time" type="bool" value="false"/-->
     
@@ -35,12 +36,16 @@
     <node name="sbg_device" ns="$(arg namespace)/sensors/sbg" pkg="sbg_driver" type="sbg_device" output="screen">
   	<rosparam command="load" file="$(find echoboat_ud_project11)/config/ellipse_D_echo_final.yaml" />
   </node>
+  
+  <include file="$(find echoboat_ud_project11)/launch/forward_camera.launch">
+  	<arg name="namespace" value="$(arg namespace)"/>
+  </include>
     
-    <rosparam file="$(find echoboat_ud_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>
+    <rosparam if = "$(arg useUDpathfollower)" file="$(find echoboat_ud_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>
 
     <include file="$(find mavros)/launch/apm.launch" ns="$(arg namespace)">
     	<arg name="fcu_url" value="/dev/ttyACM0:57600"/>
-	<arg name="gcs_url" value="udp://:14556@192.168.250.11:14550"/>
+	<arg name="gcs_url" value="udp://:14556@192.168.53.152:14550"/>
     	<param name="global_position/tf/send" value="false"/>
     	<param name="local_position/tf/send" value="false"/>
     </include>
@@ -50,5 +55,8 @@
     <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo.yaml" ns="$(arg namespace)"/>
 
     <param name="/$(arg namespace)/udp_bridge/remotes/operator/host" value="$(arg operator_ip)"/>
+
+
+    <!-- TODO add norbit_cshel launch file to this directory and call it here. want to add a conditional arg similar to useUDpathfollower. pass in vessel_ns arg into the launch file-->
     
 </launch>

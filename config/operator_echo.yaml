@@ -3,11 +3,17 @@ project11/platforms/echo:
   width: 1.0
   length: 1.5
   reference_x: 0.525
+  # nav_sources:
+  #   combined:
+  #     position_topic: /echo/sensors/sbg/imu/nav_sat_fix
+  #     orientation_topic: /echo/sensors/sbg/imu/data
+  #     velocity_topic: /echo/sensors/sbg/imu/velocity
+
   nav_sources:
     combined:
-      position_topic: /echo/sensors/sbg/imu/nav_sat_fix
-      orientation_topic: /echo/sensors/sbg/imu/data
-      velocity_topic: /echo/sensors/sbg/imu/velocity
+      position_topic: /echo/mavros/global_position/global
+      orientation_topic: /echo/mavros/imu/data
+      velocity_topic: /echo/mavros/global_position/raw/gps_vel
 
 udp_bridge/remotes:
     robot:

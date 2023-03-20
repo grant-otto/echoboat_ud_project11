@@ -5,19 +5,20 @@ mission_manager/hover_maximum_distance: 50.0
 mission_manager/hover_maximum_speed: 1.0 # m/s
 
 mru_transform/sensors:
- - name: sbg
-   topics: { position: 'sensors/sbg/imu/nav_sat_fix', orientation: 'sensors/sbg/orientation', velocity: 'sensors/sbg/imu/velocity'}
- - name: posmv
-   topics: { position: 'sensors/posmv/position', orientation: 'sensors/posmv/orientation', velocity: 'sensors/posmv/velocity'}
+# - name: sbg
+#   topics: { position: 'sensors/sbg/imu/nav_sat_fix', orientation: 'sensors/sbg/imu/data', velocity: 'sensors/sbg/imu/velocity'}
+# - name: posmv
+#   topics: { position: 'sensors/posmv/position', orientation: 'sensors/posmv/orientation', velocity: 'sensors/posmv/velocity'}
  - name: mavlink
-   topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
-      
+   topics: { position: 'mavros/global_position/global', orientation: 'mavros/imu/data', velocity: 'mavros/global_position/raw/gps_vel'}
+
+udp_bridge/maxPacketSize: 1400
 udp_bridge/remotes:
     operator:
         topics:
-          sensors_sbg_imu: {source: sensors/sbg/imu/data}
-          sensors_sbg_velocity: {source: sensors/sbg/imu/velocity}
-          sensors_sbg_nav_sat_fix: {source: sensors/sbg/imu/nav_sat_fix}
+          sensors_sbg_imu: {source: mavros/imu/data}
+          sensors_sbg_velocity: {source: mavros/global_position/global}
+          sensors_sbg_nav_sat_fix: {source: mavros/global_position/raw/gps_vel}
           #sensors_cameras_pano_2_yolo4_bounding_boxes: {source: sensors/cameras/pano_2/yolo4/bounding_boxes}
           #sensors_cameras_pano_3_yolo4_bounding_boxes: {source: sensors/cameras/pano_3/yolo4/bounding_boxes}
           #sensors_cameras_pano_4_yolo4_bounding_boxes: {source: sensors/cameras/pano_4/yolo4/bounding_boxes}
