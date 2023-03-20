@@ -1,0 +1,27 @@
+<launch>
+  <arg name="useUDpathfollower" default="true"/>
+
+
+<!--  
+
+To launch the docker based simulator, in a seperate terminal, run:
+
+roscd echo_helm/scripts
+./start_ardupilot_docker_sim.bash 
+
+
+-->
+
+
+  <include file="$(find echoboat_ud_project11)/launch/echo_robot.launch">
+    <arg name="enableBridge" value="False"/>
+    <arg name="useUDpathfollower" value="$(arg useUDpathfollower)"/>
+  </include>
+
+  <include file="$(find echoboat_ud_project11)/launch/operator_echo.launch">
+    <arg name="enableBridge" value="False"/>
+  </include>
+
+  <param name="/echo/mavros/fcu_url" value="tcp://0.0.0.0:5760@"/>
+    
+</launch>
