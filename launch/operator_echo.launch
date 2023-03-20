@@ -3,11 +3,14 @@
   <arg name="namespace" default="operator"/>
   <arg name="robotNamespace" default="echo"/>
   <arg name="backgroundChart" default="$(find echoboat_ud_project11)/camp_bg/12216/12216_1.KAP"/>
+  <arg name="enableBridge" default="true"/>
+
   <!--<arg name="logDirectory"/>--> 
   
   <include file="$(find echoboat_project11)/launch/operator_echo.launch">
     <arg name="namespace" value="$(arg namespace)"/>
     <arg name="robotNamespace" value="$(arg robotNamespace)"/>
+    <arg name="enableBridge" value="$(arg enableBridge)"/>
   </include>
   
   <include file="$(find echoboat_project11)/launch/operator_ui.launch">
