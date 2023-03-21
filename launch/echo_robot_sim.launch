@@ -4,7 +4,10 @@
 
 <!--  
 
-To launch the docker based simulator, in a seperate terminal, run:
+  This simulation is mainly to test the mavlink interface. The dynamics
+  of the simulated vehicles don't really match those of a boat.
+
+  To launch the docker based simulator, in a seperate terminal, run:
 
 roscd echo_helm/scripts
 ./start_ardupilot_docker_sim.bash 
