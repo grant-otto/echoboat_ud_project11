@@ -16,7 +16,9 @@ project11/platforms/echo:
       velocity_topic: /echo/mavros/global_position/raw/gps_vel
 
 udp_bridge/remotes:
-    robot:
-        name: echo
+  robot:
+    name: echo
+    connections:
+      default:
         host: 192.168.250.10
         port: 4200

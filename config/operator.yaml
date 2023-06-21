@@ -1,6 +1,8 @@
 udp_bridge/remotes:
-    robot:
-        name: echo
+  robot:
+    name: echo
+    connections:
+      default:
         host: 10.42.0.10
         port: 4200
         topics:

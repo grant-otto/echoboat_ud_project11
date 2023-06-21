@@ -4,7 +4,9 @@ mission_manager/turn_radius: 10.0
 
 
 udp_bridge/remotes:
-    operator:
+  operator:
+    connections:
+      default:
         host: 192.168.53.1
         port: 4201
         topics:

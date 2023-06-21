@@ -54,7 +54,7 @@
        
     <rosparam command="load" file="$(find echoboat_ud_project11)/config/echo.yaml" ns="$(arg namespace)"/>
 
-    <param name="/$(arg namespace)/udp_bridge/remotes/operator/host" value="$(arg operator_ip)"/>
+    <param name="/$(arg namespace)/udp_bridge/remotes/operator/connections/default/host" value="$(arg operator_ip)"/>
 
 
     <!-- TODO add norbit_cshel launch file to this directory and call it here. want to add a conditional arg similar to useUDpathfollower. pass in vessel_ns arg into the launch file-->

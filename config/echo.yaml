@@ -14,7 +14,9 @@ mru_transform/sensors:
 
 udp_bridge/maxPacketSize: 1400
 udp_bridge/remotes:
-    operator:
+  operator:
+    connections:
+      default:
         topics:
           sensors_sbg_imu: {source: mavros/imu/data}
           sensors_sbg_velocity: {source: mavros/global_position/global}
